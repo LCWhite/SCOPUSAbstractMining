@@ -14,22 +14,24 @@ os.makedirs(new_folder)
 whitelist = set('abcdefghijklmnopqrstuvwxyz-_ ')
 
 #Dictionary to find terms that need to be combined with underscores
-repldict = {'ssb':'sugar_sweetened_beverage',
-	'ssbs':'sugar_sweetened_beverage',
-	'sugar sweetened beverage':'sugar_sweetened_beverage',
-	'sugar sweetened beverages':'sugar_sweetened_beverage',
-	'sugarsweetened beverage':'sugar_sweetened_beverage',
-	'sugarsweetened beverages':'sugar_sweetened_beverage',
-	'sugarsweetenedbeverage':'sugar_sweetened_beverage',
-	'sugarsweetenedbeverages':'sugar_sweetened_beverage',
-	'sugar sweeten beverage' : 'sugar_sweetened_beverage',
-	'sugar sweeten beve rage' : 'sugar_sweetened_beverage',
-	'sugar sweeten beverages' : 'sugar_sweetened_beverage',
-	'newyork':'new_york',
-	'new york':'new_york',
-	'new york city':'new_york_city',
-	'newyork city':'new_york_city',
-	'newyorkcity':'new_york_city',
+repldict = {'ssb':'sugarsweetenedbeverage',
+	'ssbs':'sugarsweetenedbeverage',
+	'sugar sweetened beverage':'sugarsweetenedbeverage',
+	'sugar sweetened beverages':'sugarsweetenedbeverage',
+	'sugarsweetened beverage':'sugarsweetenedbeverage',
+	'sugarsweetened beverages':'sugarsweetenedbeverage',
+	'sugarsweetenedbeverage':'sugarsweetenedbeverage',
+	'sugarsweetenedbeverages':'sugarsweetenedbeverage',
+	'sugar sweeten beverage' : 'sugarsweetenedbeverage',
+	'sugar sweeten beve rage' : 'sugarsweetenedbeverage',
+	'sugar sweeten beverages' : 'sugarsweetenedbeverage',
+	'sugar-sweetened beverage' : 'sugarsweetenedbeverage',
+	'sugar-sweetened beverages' : 'sugarsweetenedbeverage',
+	'newyork':'newyork',
+	'new york':'newyork',
+	'new york city':'newyorkcity',
+	'newyork city':'newyorkcity',
+	'newyorkcity':'newyorkcity',
 	'-':' '
 	}
 
@@ -54,4 +56,4 @@ for row in range (2, sheet.max_row + 1):
 	f_write.write(abstract)
 	f_write.close()
 
-print('Done.')
+print('Done creating ' + str(sheet.max_row) + ' abstract files.')
